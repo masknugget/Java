@@ -1,6 +1,6 @@
 package Sorts;
 
-import java.util.ArrayList;
+import java.util.ArrayList;                  // ArrayList 和List的区别？？
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -56,7 +56,7 @@ public class BucketSort {
 
         /* sort individual bucket */
         for (List<Integer> bucket : buckets) {
-            Collections.sort(bucket);
+            Collections.sort(bucket);                                      //列表排序 
         }
 
         /* concatenate buckets to origin array */
