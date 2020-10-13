@@ -21,7 +21,7 @@ class CocktailShakerSort implements SortAlgorithm {
         int left = 0;
         int right = length - 1;
         int swappedLeft, swappedRight;
-        while (left < right) {
+        while (left < right) {                          //while在下标，for在元素上
             // front
             swappedRight = 0;
             for (int i = left; i < right; i++) {
