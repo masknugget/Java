@@ -1,10 +1,10 @@
 package Sorts;
 
 import java.util.*;
-import java.util.stream.IntStream;
+import java.util.stream.IntStream;                      //stream 也有类型
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toList;     //import static 只导入静态方法
 import static java.util.stream.Collectors.toMap;
 import static Sorts.SortUtils.print;
 
@@ -30,15 +30,15 @@ class CountingSort implements SortAlgorithm {
     @Override
     public <T extends Comparable<T>> List<T> sort(List<T> list) {
 
-        Map<T, Integer> frequency = new TreeMap<>();
+        Map<T, Integer> frequency = new TreeMap<>();                        //类似于字典的加
         // The final output array
-        List<T> sortedArray = new ArrayList<>(list.size());
+        List<T> sortedArray = new ArrayList<>(list.size());                    // ArrayList<>(list.size())
 
         // Counting the frequency of @param array elements
-        list.forEach(v -> frequency.put(v, frequency.getOrDefault(v, 0) + 1));
+        list.forEach(v -> frequency.put(v, frequency.getOrDefault(v, 0) + 1));       // forEach(v -> frequency.put())
 
         // Filling the sortedArray
-        for (Map.Entry<T, Integer> element : frequency.entrySet()) {
+        for (Map.Entry<T, Integer> element : frequency.entrySet()) {               // 这个for比较有意思 frequency.entrySet()
             for (int j = 0; j < element.getValue(); j++) {
                 sortedArray.add(element.getKey());
             }
@@ -54,7 +54,7 @@ class CountingSort implements SortAlgorithm {
      *
      * @param list The list to be sorted
      **/
-    private static <T extends Comparable<T>> List<T> streamSort(List<T> list) {
+    private static <T extends Comparable<T>> List<T> streamSort(List<T> list) {                                 //这个stream直接在list上面
         return list.stream()
                 .collect(toMap(k -> k, v -> 1, (v1, v2) -> v1 + v2, TreeMap::new))
                 .entrySet()
@@ -66,7 +66,7 @@ class CountingSort implements SortAlgorithm {
     // Driver Program
     public static void main(String[] args) {
         // Integer Input
-        List<Integer> unsortedInts = Stream.of(4, 23, 6, 78, 1, 54, 23, 1, 9, 231, 9, 12).collect(toList());
+        List<Integer> unsortedInts = Stream.of(4, 23, 6, 78, 1, 54, 23, 1, 9, 231, 9, 12).collect(toList());    // 通过Stream进行创建
         CountingSort countingSort = new CountingSort();
 
         System.out.println("Before Sorting:");
