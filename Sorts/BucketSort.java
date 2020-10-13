@@ -39,18 +39,18 @@ public class BucketSort {
         int min = min(arr);
 
         /* number of buckets */
-        int numberOfBuckets = max - min + 1;
+        int numberOfBuckets = max - min + 1;                                // 个数的时候 max-min+1
 
-        List<List<Integer>> buckets = new ArrayList<>(numberOfBuckets);
+        List<List<Integer>> buckets = new ArrayList<>(numberOfBuckets);     //List<List<Integer>> 后面只用一个 new ArrayList<>
 
         /* init buckets */
         for (int i = 0; i < numberOfBuckets; ++i) {
-            buckets.add(new ArrayList<>());
+            buckets.add(new ArrayList<>());                                // add方法
         }
 
         /* store elements to buckets */
         for (int value : arr) {
-            int hash = hash(value, min, numberOfBuckets);
+            int hash = hash(value, min, numberOfBuckets);                   //buckets是两个的key经过hash
             buckets.get(hash).add(value);
         }
 
