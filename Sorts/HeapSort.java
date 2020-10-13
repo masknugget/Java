@@ -1,6 +1,6 @@
 package Sorts;
 
-import java.util.ArrayList;
+import java.util.ArrayList;                             // ArrayList, Arrays, List 这三个
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import static Sorts.SortUtils.*;
 public class HeapSort implements SortAlgorithm {
 
 
-    private static class Heap<T extends Comparable<T>> {
+    private static class Heap<T extends Comparable<T>> {      // 对堆进行改编
         /**
          * Array to store heap
          */
