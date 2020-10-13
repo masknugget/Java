@@ -17,8 +17,8 @@ class BubbleSort implements SortAlgorithm {
      **/
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
-        for (int i = 0, size = array.length; i < size - 1; ++i) {
+    public <T extends Comparable<T>> T[] sort(T[] array) {                  // 进行排序时候的泛型
+        for (int i = 0, size = array.length; i < size - 1; ++i) {           // for init条件的时候可以有多个
             boolean swapped = false;
             for (int j = 0; j < size - 1 - i; ++j) {
             	if (greater(array[j], array[j + 1])) {
@@ -38,7 +38,7 @@ class BubbleSort implements SortAlgorithm {
 
         // Integer Input
         Integer[] integers = {4, 23, 6, 78, 1, 54, 231, 9, 12};
-        BubbleSort bubbleSort = new BubbleSort();
+        BubbleSort bubbleSort = new BubbleSort();               // 神马**器，执行动作, 对于内存状态的更改
         bubbleSort.sort(integers);
 
         // Output => 1, 4, 6, 9, 12, 23, 54, 78, 231
