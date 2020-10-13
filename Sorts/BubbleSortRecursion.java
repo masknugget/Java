@@ -7,12 +7,12 @@ import java.util.Random;
  */
 public class BubbleSortRecursion implements SortAlgorithm {
     public static void main(String[] args) {
-        Integer[] array = new Integer[10];
+        Integer[] array = new Integer[10];              
 
         Random random = new Random();
         /* generate 10 random numbers from -50 to 49 */
         for (int i = 0; i < array.length; ++i) {
-            array[i] = random.nextInt(100) - 50;
+            array[i] = random.nextInt(100) - 50;                                //nextInt 0-100之间取一个
         }
 
         BubbleSortRecursion bubbleSortRecursion = new BubbleSortRecursion();
@@ -20,7 +20,7 @@ public class BubbleSortRecursion implements SortAlgorithm {
 
         /* check array is sorted or not */
         for (int i = 0; i < array.length - 1; ++i) {
-            assert (array[i].compareTo(array[i + 1]) <= 0);
+            assert (array[i].compareTo(array[i + 1]) <= 0);                      //Integer[].compareTo() 方法
         }
     }
 
@@ -42,7 +42,7 @@ public class BubbleSortRecursion implements SortAlgorithm {
      */
     private static <T extends Comparable<T>> void bubbleSort(T[] unsorted, int len) {
         boolean swapped = false; /* flag to check if array is sorted or not */
-        for (int i = 0; i < len - 1; ++i) {
+        for (int i = 0; i < len - 1; ++i) {                                         // for if cond, 额外变量用于检测或其他
             if (SortUtils.greater(unsorted[i], unsorted[i + 1])) {
                 SortUtils.swap(unsorted, i, i + 1);
                 swapped = true;
