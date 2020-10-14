@@ -1,8 +1,8 @@
 package Searches;
 
-import java.util.Arrays;
+import java.util.Arrays;                                //
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadLocalRandom;          //并发里不同的随机数产生应该是不同的ThreadLocalRandom
 import java.util.stream.IntStream;
 
 import static java.lang.String.format;
@@ -51,7 +51,7 @@ class BinarySearch implements SearchAlgorithm {
      * @param right The  upper bound
      * @return the location of the key
      **/
-    private <T extends Comparable<T>> int search(T array[], T key, int left, int right){
+    private <T extends Comparable<T>> int search(T array[], T key, int left, int right){        // T key进行
         if (right < left) return -1; // this means that the key not found
 
         // find median
@@ -70,12 +70,12 @@ class BinarySearch implements SearchAlgorithm {
     // Driver Program
     public static void main(String[] args) {
         // Just generate data
-        Random r = ThreadLocalRandom.current();
+        Random r = ThreadLocalRandom.current();                                             // 通过初始化的一个ThreadLocalRandom
 
         int size = 100;
         int maxElement = 100000;
 
-        Integer[] integers = IntStream.generate(() -> r.nextInt(maxElement)).limit(size).sorted().boxed().toArray(Integer[]::new);
+        Integer[] integers = IntStream.generate(() -> r.nextInt(maxElement)).limit(size).sorted().boxed().toArray(Integer[]::new);  // IntStream().generate()  形成一些
 
 
         // The element that should be found
@@ -84,7 +84,7 @@ class BinarySearch implements SearchAlgorithm {
         BinarySearch search = new BinarySearch();
         int atIndex = search.find(integers, shouldBeFound);
 
-        System.out.println(format(
+        System.out.println(format(                                                          //String.format方法
             "Should be found: %d. Found %d at index %d. An array length %d",
             shouldBeFound, integers[atIndex], atIndex, size
         ));
