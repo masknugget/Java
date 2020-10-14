@@ -60,7 +60,7 @@ public final class IterativeBinarySearch implements SearchAlgorithm {
         Random r = new Random();
         int size = 100;
         int maxElement = 100000;
-        Integer[] integers = Stream.generate(() -> r.nextInt(maxElement)).limit(size).sorted().toArray(Integer[]::new);
+        Integer[] integers = Stream.generate(() -> r.nextInt(maxElement)).limit(size).sorted().toArray(Integer[]::new);     // 通过stream生成
 
 
         //the element that should be found
