@@ -11,7 +11,7 @@ import static Sorts.SortUtils.*;
 public class PancakeSort implements SortAlgorithm {
 
     @Override
-    public <T extends Comparable<T>> T[] sort(T[] array) {
+    public <T extends Comparable<T>> T[] sort(T[] array) {                  // <T extends Comparable<T>> T[]
         int size = array.length;
 
         for (int i = 0; i < size; i++) {
