@@ -1,10 +1,10 @@
 package Sorts;
 
-import java.util.Arrays;
+import java.util.Arrays;                                            //为了调用fill方法
 
 class RadixSort {
 
-    private static int getMax(int[] arr, int n) {
+    private static int getMax(int[] arr, int n) {                   // max,min 并没有神马技巧
         int mx = arr[0];
         for (int i = 1; i < n; i++)
             if (arr[i] > mx)
@@ -52,7 +52,7 @@ class RadixSort {
     public static void main(String[] args) {
         int[] arr = {170, 45, 75, 90, 802, 24, 2, 66};
         int n = arr.length;
-        radixsort(arr, n);
+        radixsort(arr, n);                              //可以不用像其他那样 RadixSort rs = new RadixSort(); 
         print(arr, n);
     }
 }
