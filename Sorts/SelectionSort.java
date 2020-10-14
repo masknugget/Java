@@ -15,7 +15,7 @@ public class SelectionSort implements SortAlgorithm {
                         the indexes of the to-swap elements
      */
     
-    public <T> void swap(T[] arr, int i, int j) {
+    public <T> void swap(T[] arr, int i, int j) {                   //<T> T[]
        T temp = arr[i];
        arr[i] = arr[j];
        arr[j] = temp;
@@ -35,7 +35,7 @@ public class SelectionSort implements SortAlgorithm {
             int min = i;
 
             for (int j = i + 1; j < n; j++) {
-                if (arr[min].compareTo(arr[j]) < 0) {
+                if (arr[min].compareTo(arr[j]) < 0) {               // 又遇见了compareTo的方法
                     min = j;
                 }
             }
