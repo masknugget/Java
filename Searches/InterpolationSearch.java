@@ -26,11 +26,11 @@ class InterpolationSearch {
      */
     public int find(int array[], int key) {
         // Find indexes of two corners
-        int start = 0, end = (array.length - 1);
+        int start = 0, end = (array.length - 1);                                                            // end =(arr.length - 1)
 
         // Since array is sorted, an element present
         // in array must be in range defined by corner
-        while (start <= end && key >= array[start] && key <= array[end]) {
+        while (start <= end && key >= array[start] && key <= array[end]) {                                  // while里面有2个 &&条件
             // Probing the position with keeping
             // uniform distribution in mind.
             int pos = start + (((end - start) / (array[end] - array[start])) * (key - array[start]));
@@ -68,7 +68,7 @@ class InterpolationSearch {
                 , shouldBeFound, integers[atIndex], atIndex, size));
 
 
-        int toCheck = Arrays.binarySearch(integers, shouldBeFound);
+        int toCheck = Arrays.binarySearch(integers, shouldBeFound);                                                         //这个是内置的方法
         System.out.println(format("Found by system method at an index: %d. Is equal: %b", toCheck, toCheck == atIndex));
     }
 }
